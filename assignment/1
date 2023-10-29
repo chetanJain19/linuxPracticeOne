@@ -1,0 +1,27 @@
+#!/bin/bash
+# Assignment 2: Write a script to build a hotel menu
+
+echo "List of menu items: idli puri dosa uppit ricebath"
+read item
+
+# Define an array of menu items
+listOfItem={"idli" "puri" "dosa" "uppit" "ricebath"}
+
+item_available=false
+
+# Iterate through the list of menu items
+for a in $listOfItem
+echo "$a"
+do
+  if [ "$item" == "$a" ]
+  then
+    echo "Item is available"
+    item_available=true
+    break
+  fi
+done
+
+if [ "$item_available" == false ];
+then
+  echo "Item is not available"
+fi
